@@ -1,0 +1,228 @@
+$primary-color: #333;
+$secondary-color: #f4f4f4;
+$text-color: #333;
+$text-light-color: #fff;
+$text-muted-color: #777;
+$hover-bg-color: #f0f0f0;
+$hover-color: #555;
+$border-radius: 8px;
+$transition: 0.3s ease;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  background-color: $secondary-color;
+  color: $text-color;
+  line-height: 1.6;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: $primary-color;
+  color: $text-light-color;
+
+  .logo img {
+    height: 40px;
+  }
+
+  nav {
+    .iconBtn,
+    .menuBtn {
+      background: none;
+      border: none;
+      color: $text-light-color;
+      cursor: pointer;
+
+      img {
+        height: 24px;
+      }
+    }
+  }
+}
+
+.poster {
+  position: relative;
+  width: 100%;
+  height: 500px;
+  overflow: hidden;
+  background-color: $primary-color;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.8;
+  }
+
+  .posterText {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: $text-light-color;
+
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+
+    p {
+      font-size: 1.2rem;
+    }
+  }
+
+  .sideButtons {
+    position: absolute;
+    top: 50%;
+    right: 2rem;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+
+    .sideBtn {
+      background-color: $text-light-color;
+      color: $primary-color;
+      border: none;
+      padding: 0.5rem 1rem;
+      margin-bottom: 1rem;
+      border-radius: $border-radius;
+      cursor: pointer;
+      transition: background-color $transition;
+
+      &:hover {
+        background-color: $hover-bg-color;
+      }
+    }
+  }
+}
+
+.groupList {
+  padding: 2rem;
+  max-width: 1440px;
+  margin: 0 auto;
+
+  h2,
+  p {
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 1.8rem;
+    color: $text-color;
+  }
+
+  .groupCards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 1.5rem;
+
+    .card {
+      background-color: $text-light-color;
+      border-radius: $border-radius;
+      overflow: hidden;
+      width: calc(33% - 1.5rem);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      transition: transform 0.2s ease;
+
+      &:hover {
+        transform: translateY(-5px);
+      }
+
+      img {
+        width: 100%;
+        height: 180px;
+        object-fit: cover;
+      }
+
+      .cardContent {
+        padding: 1rem;
+
+        h3 {
+          font-size: 1.5rem;
+          margin-bottom: 0.5rem;
+        }
+
+        p {
+          margin-bottom: 0.5rem;
+          color: $text-muted-color;
+        }
+      }
+
+      .joinBtn {
+        display: inline-block;
+        padding: 0.5rem 1rem;
+        background-color: $primary-color;
+        color: $text-light-color;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        text-align: center;
+        font-size: 1rem;
+        margin-top: 0.5rem;
+        transition: background-color $transition;
+
+        &:hover {
+          background-color: $hover-color;
+        }
+      }
+    }
+  }
+}
+
+.footer {
+  background-color: $primary-color;
+  color: $text-light-color;
+  padding: 2rem 2rem 1rem;
+
+  .footerLinks {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    max-width: 1440px;
+    margin: 0 auto;
+
+    h4 {
+      margin-bottom: 1rem;
+      font-size: 1.2rem;
+    }
+
+    ul {
+      list-style: none;
+
+      li {
+        margin-bottom: 0.5rem;
+
+        a {
+          color: $text-light-color;
+          text-decoration: none;
+          transition: color $transition;
+
+          &:hover {
+            color: #ddd;
+          }
+        }
+      }
+    }
+  }
+
+  .footerBottom {
+    text-align: center;
+    margin-top: 1rem;
+    font-size: 0.8rem;
+
+    .socialIcons {
+      a img {
+        height: 24px;
+        margin: 0 0.5rem;
+      }
+    }
+  }
+}

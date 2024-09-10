@@ -1,0 +1,101 @@
+$primary-color: #413c1c;
+$secondary-color: #574426;
+$primary-color-bg: #f5f5f7;
+$secondary-color-bg: #e5e4cf;
+$hint-color: #e49366;
+$hint-color-bg: #f5f5f7;
+$text-color: #2d2d2d;
+$text-color-light: #8f8e93;
+$error-color: #de3e3e;
+
+.groupCards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 32px;
+}
+
+.card {
+  display: flex;
+  width: 550px;
+  height: 180px;
+  border-radius: 18px;
+  overflow: hidden;
+  background-color: $secondary-color-bg;
+}
+
+.cardImage {
+  width: 254px;
+  height: 100%;
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+.cardContent {
+  width: 370px;
+  padding: 15px 20px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  .title {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 0;
+    color: $text-color;
+  }
+
+  .subLine {
+    margin-block: 15px;
+  }
+
+  .info {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+  }
+
+  .details {
+    display: inline-flex;
+    flex-direction: column;
+    gap: 4px;
+
+    .detailItem {
+      font-size: 14px;
+      display: flex;
+      align-items: center;
+      color: $text-color;
+
+      .icon {
+        margin-right: 6px;
+      }
+    }
+  }
+
+  .moreBtn {
+    align-self: flex-end;
+    width: 139px;
+    height: 37px;
+    padding: 10px 40px;
+    border-radius: 12px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 0.7px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s ease;
+
+    &:hover {
+      background-color: $hint-color;
+    }
+  }
+}

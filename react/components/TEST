@@ -1,0 +1,30 @@
+document.addEventListener('DOMContentLoaded', () => {
+    const chatForm = document.getElementById('chat-form');
+    const chatInput = document.getElementById('chat-input');
+    const chatBox = document.getElementById('chat-box');
+    const sendButton = document.getElementById('send-button');
+
+    const addMessage = (message, sender) => {
+        const messageElement = document.createElement('div');
+        messageElement.classList.add('chat-message');
+        messageElement.innerHTML = `<strong>${sender === 'user' ? '你' : '客服'}:</strong> ${message}<br><small>${new Date().toLocaleString()}</small>`;
+        chatBox.appendChild(messageElement);
+        chatBox.scrollTop = chatBox.scrollHeight;
+    };
+
+    const handleSend = () => {
+        const message = chatInput.value.trim();
+        if (message === '') return;
+        addMessage(message, 'user');
+        chatInput.value = '';
+    };
+
+    sendButton.addEventListener('click', handleSend);
+
+    chatInput.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter') {
+            e.preventDefault();
+            handleSend();
+        }
+    });
+});
